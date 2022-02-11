@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Register Your Slot</h1>
+<div class="content-section">
+    <form action="#">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group col-md-6">
+            <legend class="border-bottom mb-4">{{ legend }}</legend>
+<!--
+            <div class="form-group">
+                {{ form.cafe_name.label(class="form-control-label") }}
+                {% if form.cafe_name.errors %}
+                    {{ form.cafe_name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.cafe_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.cafe_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+-->
+            <div class="form-group">
+                {{ form.cafe_name.label(class= "form-control-label") }}
+                <select name="cafe_name" class="form-control">
+                    <option value="{}"> {{form.cafe_name.data}} </option>
+                    <option value="Tuesday"> Tuesday </option>
+                    <option value="Wednesday"> Wednesday </option>
+                    <option value="Thursday"> Thursday </option>
+                    <option value="Friday"> Friday </option>
+                    <option value="Saturday"> Saturday </option>
+                    <option value="Sunday"> Sunday </option>
+                </select>
+
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                {{ form.date.label(class= "form-control-label") }}
+                <select name="date" class="form-control">
+                    <option value="Monday"> Monday </option>
+                    <option value="Tuesday"> Tuesday </option>
+                    <option value="Wednesday"> Wednesday </option>
+                    <option value="Thursday"> Thursday </option>
+                    <option value="Friday"> Friday </option>
+                    <option value="Saturday"> Saturday </option>
+                    <option value="Sunday"> Sunday </option>
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.time.label(class="form-control-label") }}
+                <select time="time" class="form-control">
+                    <option value="Slot1"> 8:30-10:30 </option>
+                    <option value="Slot2"> 10:30-12_30 </option>
+                    <option value="Slot3"> 14:30-16:30 </option>
+                    <option value="Slot4"> 16:30-18:30 </option>
+                </select>
+
+
+            </div>
+
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+
+    </form>
+</div>
+
+ {% endblock content %}
+
+
